@@ -157,7 +157,7 @@ STRING            ({BEG_STRING}\")
 static int copy_yytext( int is_quoted ) {
     unsigned len, start;
 
-    len = strlen( yytext ) - (is_quoted ? 2 : 0);
+    len = strlen( yytext ) - (is_quoted ? 2 : 0) + 1;
     if( len > MAX_STR_LEN ) {
         parse_error( "String too long (max is %u chars)" );
         return 0;
