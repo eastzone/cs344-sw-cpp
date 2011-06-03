@@ -1,0 +1,33 @@
+--------
+BUILDING
+--------
+
+autotools is used as the build system. Unfortunately, the toolchain version on
+myth may be to old; use the ee108-*b machines.
+
+To build in VNS mode:
+
+  % make clean
+  % make all
+
+To build in NetFPGA mode:
+
+  % make clean
+  % make all OPTS='--enable-cpumode'
+
+To build in NetFPGA mode for the reference bitfile (probably unnecessary):
+
+  % make clean
+  % make all OPTS='--enable-cpumode --enable-ref-reg-defines'
+
+To force re-execution of autotools' configure script on the next build:
+
+  % make deep-clean
+
+-------
+TESTING
+-------
+
+To run the googletest unit test suite, run:
+
+  % make check
